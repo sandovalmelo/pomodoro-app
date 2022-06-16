@@ -70,3 +70,19 @@ body {
 	stroke: #fd6d72;
 	transition: 1s stroke-dashoffset;
 }
+
+.time {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.time span {
+	font-size: 4.5rem;
+	font-family: var(--variant-font-1);
+}
