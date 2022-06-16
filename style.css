@@ -20,13 +20,18 @@
 	--color-grey-2: #e0e0e0;
 	--variant-color-1: #fd6d72;
 	--variant-color-2: #6ff4fb;
-	--variant-color-2: #d982f7;
+	--variant-color-3: #d982f7;
 }
 
 body {
 	font-family: var(--main-font);
 	background-color: var(--main-color-1);
 	color: var(--light-color);
+}
+
+label,
+input {
+	font-family: inherit;
 }
 
 /* Pomodoro Timer =============================================== */
@@ -92,4 +97,171 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+}
+
+/* Settings =============================================================*/
+.settings-container {
+	background-color: #fff;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	color: var(--main-color-2);
+	border-radius: 8px;
+	max-width: 30rem;
+	position: relative;
+}
+
+.settings-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.form-title {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.85rem;
+	text-align: center;
+}
+
+.settings-form-pomodoro {
+	border-top: solid 1px var(--color-grey-2);
+	padding: 1rem;
+}
+
+.form-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0.5rem 0;
+}
+
+.form-group label {
+	color: var(--color-grey-1);
+	font-weight: 600;
+}
+
+.form-group input {
+	background-color: var(--light-color);
+	border: none;
+	padding: 0.5rem;
+	width: 8rem;
+	font-weight: bold;
+	font-size: 1rem;
+	border-radius: 3px;
+}
+
+.settings-form-font {
+	border-top: solid 1px var(--color-grey-2);
+	padding: 1rem;
+}
+
+.form-font-container {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.font-input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.font-input-label {
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: var(--light-color);
+	align-items: center;
+	justify-content: center;
+}
+
+.font-input:checked + .font-input-label {
+	background-color: var(--main-color-2);
+	color: var(--light-color);
+}
+
+.font-spartan {
+	font-family: var(--variant-font-1);
+}
+
+.font-roboto-slab {
+	font-family: var(--variant-font-2);
+}
+
+.font-space-mono {
+	font-family: var(--variant-font-3);
+}
+
+.settings-form-color {
+	padding: 1rem;
+	border-top: solid 1px var(--color-grey-2);
+}
+
+.form-color-container {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.color-input {
+	visibility: 0;
+	height: 0;
+	width: 0;
+}
+
+.color-input-label {
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	color: inherit;
+	position: relative;
+}
+
+.color-1 {
+	background-color: var(--variant-color-1);
+}
+
+.color-2 {
+	background-color: var(--variant-color-2);
+}
+
+.color-3 {
+	background-color: var(--variant-color-3);
+}
+
+.color-input:checked + .color-input-label::after {
+	content: "";
+	display: block;
+	width: 8px;
+	height: 16px;
+	border: solid var(--main-color-2);
+	border-width: 0 3px 3px 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	-ms-transform: translate(-50%, -50%) rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.submit-button {
+	background-color: var(--variant-color-1);
+	color: var(--color-grey-2);
+	border: none;
+	padding: 1rem 2.5rem;
+	border-radius: 50px;
+	position: relative;
+	bottom: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1rem;
+	font-weight: 600;
 }
