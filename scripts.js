@@ -1,10 +1,18 @@
 const settingsIcon = document.getElementById("settings-icon");
 const closeIcon = document.getElementById("close-icon");
-const settingsOverlay = document.querySelector(".settings");
-const settingsForm = document.getElementById("settings-form");
+
+const pomodoroOptions = document.getElementById("pomodoro-options");
+
 const pomodoroMinutes = document.getElementById("pomodoro-minutes");
 const shortBreak = document.getElementById("short-break");
 const longBreak = document.getElementById("long-break");
+
+const settingsOverlay = document.querySelector(".settings");
+const settingsForm = document.getElementById("settings-form");
+
+function setOptionMinutes(option) {
+	console.log(option);
+}
 
 settingsIcon.addEventListener("click", () => {
 	document.body.classList.add("settings-open");
@@ -26,4 +34,8 @@ settingsForm.addEventListener("submit", (event) => {
 	console.log(pomodoroMinutes.value);
 	console.log(shortBreak.value);
 	console.log(longBreak.value);
+});
+
+pomodoroOptions.addEventListener("change", (event) => {
+	setOptionMinutes(event.target.value);
 });
