@@ -22,3 +22,9 @@
 	--variant-color-2: #6ff4fb;
 	--variant-color-2: #d982f7;
 }
+
+body {
+	font-family: var(--main-font);
+	background-color: var(--main-color-1);
+	color: var(--light-color);
+}
