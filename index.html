@@ -17,6 +17,27 @@
 <body>
   <section class="pomodoro">
     <h1 class="pomodoro-title">pomodoro</h1>
+
+    <form class="pomodoro-options">
+      <div class="option-group">
+        <input type="radio" name="pomodoro-option" id="option-pomodoro" value="option-pomodoro"
+          class="pomodoro-option-input" checked>
+        <label for="option-pomodoro" class="pomodoro-option-label">pomodoro</label>
+      </div>
+
+      <div class="option-group">
+        <input type="radio" name="pomodoro-option" id="option-short-break" value="option-short-break"
+          class="pomodoro-option-input">
+        <label for="option-short-break" class="pomodoro-option-label">short break</label>
+      </div>
+
+      <div class="option-group">
+        <input type="radio" name="pomodoro-option" id="option-long-break" value="option-long-break"
+          class="pomodoro-option-input">
+        <label for="option-long-break" class="pomodoro-option-label">long break</label>
+      </div>
+    </form>
+
     <div class="timer-container">
       <div class="timer-background">
         <svg class="progress" width="270" height="270" fill="transparent">

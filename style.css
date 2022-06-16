@@ -27,11 +27,55 @@ body {
 	font-family: var(--main-font);
 	background-color: var(--main-color-1);
 	color: var(--light-color);
+	padding: 1rem;
 }
 
 label,
 input {
 	font-family: inherit;
+}
+
+/* Pomodoro Options ============================================*/
+.pomodoro-options {
+	background-color: var(--main-color-2);
+	margin-top: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	border-radius: 50px;
+	max-width: 25rem;
+}
+
+.option-group {
+	display: inline-block;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pomodoro-option-input {
+	visibility: 0;
+	width: 0;
+	height: 0;
+}
+
+.pomodoro-option-label {
+	background-color: transparent;
+	color: var(--light-color);
+	padding: 0.75rem 1rem;
+	flex: 1;
+	font-size: 0.75rem;
+	text-align: center;
+	border-radius: 50px;
+	font-weight: 600;
+}
+
+.pomodoro-option-input:checked + .pomodoro-option-label {
+	background-color: var(--variant-color-1);
+	color: var(--main-color-2);
 }
 
 /* Pomodoro Timer =============================================== */
@@ -102,8 +146,8 @@ input {
 /* Settings =============================================================*/
 .settings-container {
 	background-color: #fff;
-	margin-left: 1rem;
-	margin-right: 1rem;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 1rem;
 	margin-bottom: 2rem;
 	color: var(--main-color-2);
@@ -124,6 +168,7 @@ input {
 	letter-spacing: 2px;
 	font-size: 0.85rem;
 	text-align: center;
+	margin-bottom: 1rem;
 }
 
 .settings-form-pomodoro {
@@ -159,7 +204,6 @@ input {
 }
 
 .form-font-container {
-	margin-top: 1rem;
 	display: flex;
 	justify-content: center;
 	gap: 1.5rem;
@@ -204,7 +248,6 @@ input {
 }
 
 .form-color-container {
-	margin-top: 1rem;
 	display: flex;
 	justify-content: center;
 	gap: 1.5rem;
