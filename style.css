@@ -56,3 +56,17 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+.progress {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.progress-bar {
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+	stroke: #fd6d72;
+	transition: 1s stroke-dashoffset;
+}
