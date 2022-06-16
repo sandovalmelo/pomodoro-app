@@ -30,6 +30,12 @@ body {
 	padding: 1rem;
 }
 
+body.settings-open {
+	position: relative;
+	width: 100%;
+	height: 10%;
+}
+
 label,
 input {
 	font-family: inherit;
@@ -144,7 +150,29 @@ input {
 }
 
 /* Settings =============================================================*/
+body.settings-open .settings {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	background-color: #0000007e;
+}
+
+body.settings-open .settings-container {
+	display: block;
+	visibility: visible;
+}
+
 .settings-container {
+	display: none;
+	visibility: hidden;
 	background-color: #fff;
 	margin-left: auto;
 	margin-right: auto;
@@ -154,6 +182,7 @@ input {
 	border-radius: 8px;
 	max-width: 30rem;
 	position: relative;
+	flex: 1;
 }
 
 .settings-header {
