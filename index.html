@@ -34,6 +34,57 @@
   </section>
 
   <img src="./img/settings-icon.svg" alt="Settings Icon" class="settings-icon">
+
+  <section class="settings">
+    <div class="settings-container">
+      <div class="settings-header">
+        <h2 class="settings-title">Settings</h2>
+        <div class="close-icon">
+          <img src="./img/close-icon.svg" alt="Close Icon">
+        </div>
+      </div>
+
+      <form class="settings-form">
+        <div class="settings-form-pomodoro">
+          <h3 class="form-title">Time (minutes)</h3>
+          <div class="form-group">
+            <label for="pomodoro-minutes">pomodoro</label>
+            <input type="number" name="pomodoro-minutes" id="pomodoro-minutes" value="25" min="1" max="60">
+          </div>
+          <div class="form-group">
+            <label for="short-break">short-break</label>
+            <input type="number" name="short-break" id="short-break" value="5" min="1" max="60">
+          </div>
+          <div class="form-group">
+            <label for="long-break">long break</label>
+            <input type="number" name="long-break" id="long-break" value="15" min="1" max="60">
+          </div>
+        </div>
+
+        <div class="settings-form-font">
+          <h3 class="form-title">Font</h3>
+          <label for="league-spartan">League Spartan</label>
+          <input type="radio" name="font" id="league-spartan">
+          <label for="roboto-slab">Roboto Slab</label>
+          <input type="radio" name="font" id="roboto-slab">
+          <label for="space-mono">Space Mono</label>
+          <input type="radio" name="font" id="space-mono">
+        </div>
+
+        <div class="settings-form-color">
+          <h3 class="form-title">Color</h3>
+          <label for="color-1">Color 1</label>
+          <input type="radio" name="color" id="color-1">
+
+          <label for="color-2">Color 2</label>
+          <input type="radio" name="color" id="color-2">
+
+          <label for="color-3">Color 3</label>
+          <input type="radio" name="color" id="color-3">
+        </div>
+      </form>
+    </div>
+  </section>
 </body>
 
 </html>
