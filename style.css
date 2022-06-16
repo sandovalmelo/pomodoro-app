@@ -192,6 +192,15 @@ body.settings-open .settings-container {
 	padding: 1rem;
 }
 
+.close-icon {
+	height: 26px;
+	width: 26px;
+}
+
+.close-icon img {
+	width: 100%;
+}
+
 .form-title {
 	text-transform: uppercase;
 	letter-spacing: 2px;
