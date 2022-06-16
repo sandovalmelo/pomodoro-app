@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--main-font: "Poppins", sans-serif;
+	--variant-font-1: "League Spartan", sans-serif;
+	--variant-font-2: "Roboto Slab", serif;
+	--variant-font-3: "Space Mono", monospace;
+
+	--main-color-1: #1e2140;
+	--main-color-2: #151932;
+	--main-color-3: #292d53;
+	--light-color: #d8dffb;
+	--color-grey-1: #828282;
+	--color-grey-2: #e0e0e0;
+	--variant-color-1: #fd6d72;
+	--variant-color-2: #6ff4fb;
+	--variant-color-2: #d982f7;
+}
