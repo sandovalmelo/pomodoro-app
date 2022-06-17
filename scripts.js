@@ -108,6 +108,7 @@ settingsForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 	totalTime = Number(pomodoroMinutes.value) * 60;
 	timeLeft = totalTime;
+	percentValue = 100;
 	renderTime();
 	toggleSettings("remove");
 });

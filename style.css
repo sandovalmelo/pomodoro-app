@@ -143,13 +143,29 @@ input {
 	font-family: var(--variant-font-1);
 }
 
+.timer-button {
+	background-color: transparent;
+	border: none;
+	text-transform: uppercase;
+	font-family: inherit;
+	font-weight: 600;
+	letter-spacing: 8px;
+	font-size: 1rem;
+	color: inherit;
+	position: absolute;
+	top: 79%;
+	left: 50%;
+	transform: translate(-50%, -79%);
+	padding: 0.25rem 0.75rem;
+}
+
+/* Settings =============================================================*/
 .settings-icon {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 }
 
-/* Settings =============================================================*/
 body.settings-open .settings {
 	position: absolute;
 	top: 0;
