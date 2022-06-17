@@ -34,6 +34,7 @@ settingsForm.addEventListener("submit", (event) => {
 	console.log(pomodoroMinutes.value);
 	console.log(shortBreak.value);
 	console.log(longBreak.value);
+	document.body.classList.remove("settings-open");
 });
 
 pomodoroOptions.addEventListener("change", (event) => {
