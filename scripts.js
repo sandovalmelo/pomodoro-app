@@ -43,8 +43,6 @@ function setProgress(percent) {
 setProgress(100);
 
 function renderTime() {
-	console.log(totalTime);
-	console.log(timeLeft);
 	const minutes = Math.floor(timeLeft / 60)
 		.toString()
 		.padStart(2, "0");
@@ -81,6 +79,7 @@ function setOptionMinutes(option) {
 	}
 
 	timeLeft = totalTime;
+	percentValue = 100;
 	renderTime();
 }
 
@@ -107,7 +106,8 @@ settingsOverlay.addEventListener("click", (event) => {
 
 settingsForm.addEventListener("submit", (event) => {
 	event.preventDefault();
-	totalTime = pomodoroMinutes.value;
+	totalTime = Number(pomodoroMinutes.value) * 60;
+	timeLeft = totalTime;
 	renderTime();
 	toggleSettings("remove");
 });
@@ -119,6 +119,7 @@ pomodoroOptions.addEventListener("change", (event) => {
 function getSettingsOptions() {
 	totalTime = Number(pomodoroMinutes.value) * 60;
 	timeLeft = totalTime;
+	percentValue = 100;
 	renderTime();
 }
 
