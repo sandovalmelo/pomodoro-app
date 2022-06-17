@@ -14,17 +14,24 @@ function setOptionMinutes(option) {
 	console.log(option);
 }
 
+function toggleSettings(method) {
+	if (method === "add") {
+		document.body.classList.add("settings-open");
+	} else if (method === "remove") {
+		document.body.classList.remove("settings-open");
+	}
+}
+
 settingsIcon.addEventListener("click", () => {
-	document.body.classList.add("settings-open");
+	toggleSettings("add");
 });
 
 closeIcon.addEventListener("click", () => {
-	document.body.classList.remove("settings-open");
+	toggleSettings("remove");
 });
 
 settingsOverlay.addEventListener("click", (event) => {
-	if (event.target === settingsOverlay)
-		document.body.classList.remove("settings-open");
+	if (event.target === settingsOverlay) toggleSettings("remove");
 });
 
 settingsForm.addEventListener("submit", (event) => {
@@ -34,7 +41,8 @@ settingsForm.addEventListener("submit", (event) => {
 	console.log(pomodoroMinutes.value);
 	console.log(shortBreak.value);
 	console.log(longBreak.value);
-	document.body.classList.remove("settings-open");
+
+	toggleSettings("remove");
 });
 
 pomodoroOptions.addEventListener("change", (event) => {
