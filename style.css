@@ -116,6 +116,8 @@ input {
 
 .timer-container {
 	background: linear-gradient(120deg, var(--main-color-2), var(--main-color-3));
+	box-shadow: -8px -8px 2px 6px rgba(41, 45, 83, 0.1),
+		4px 4px 8px 4px rgba(0, 0, 0, 0.1);
 	width: 300px;
 	height: 300px;
 	margin-top: 3rem;
