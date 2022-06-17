@@ -10,7 +10,7 @@
 	--main-font: "Poppins", sans-serif;
 	--variant-font-1: "League Spartan", sans-serif;
 	--variant-font-2: "Roboto Slab", serif;
-	--variant-font-3: "Space Mono", monospace;
+	--variant-font-3: "Space Grotesk", sans-serif;
 
 	--main-color-1: #1e2140;
 	--main-color-2: #151932;
@@ -21,6 +21,30 @@
 	--variant-color-1: #fd6d72;
 	--variant-color-2: #6ff4fb;
 	--variant-color-3: #d982f7;
+}
+
+body[data-color="color-1"] {
+	--variant-color-1: #fd6d72;
+}
+
+body[data-color="color-2"] {
+	--variant-color-1: #6ff4fb;
+}
+
+body[data-color="color-3"] {
+	--variant-color-1: #d982f7;
+}
+
+body[data-font="league-spartan"] {
+	--variant-font-1: "League Spartan", sans-serif;
+}
+
+body[data-font="roboto-slab"] {
+	--variant-font-1: "Roboto Slab", serif;
+}
+
+body[data-font="space-grotesk"] {
+	--variant-font-1: "Space Grotesk", sans-serif;
 }
 
 body {
@@ -44,7 +68,7 @@ input {
 /* Pomodoro Options ============================================*/
 .pomodoro-options {
 	background-color: var(--main-color-2);
-	margin-top: 1rem;
+	margin-top: 2rem;
 	margin-left: auto;
 	margin-right: auto;
 	display: flex;
@@ -94,7 +118,7 @@ input {
 	background: linear-gradient(120deg, var(--main-color-2), var(--main-color-3));
 	width: 300px;
 	height: 300px;
-	margin-top: 4rem;
+	margin-top: 3rem;
 	margin-bottom: 4rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -123,7 +147,7 @@ input {
 .progress-bar {
 	transform: rotate(-90deg);
 	transform-origin: 50% 50%;
-	stroke: #fd6d72;
+	stroke: var(--variant-color-1);
 	transition: 1s stroke-dashoffset;
 }
 
@@ -157,6 +181,7 @@ input {
 	left: 50%;
 	transform: translate(-50%, -79%);
 	padding: 0.25rem 0.75rem;
+	border-radius: 50px;
 }
 
 /* Settings =============================================================*/
@@ -292,7 +317,7 @@ body.settings-open .settings-container {
 	font-family: var(--variant-font-2);
 }
 
-.font-space-mono {
+.font-space-grotesk {
 	font-family: var(--variant-font-3);
 }
 
@@ -323,15 +348,15 @@ body.settings-open .settings-container {
 }
 
 .color-1 {
-	background-color: var(--variant-color-1);
+	background-color: #fd6d72;
 }
 
 .color-2 {
-	background-color: var(--variant-color-2);
+	background-color: #6ff4fb;
 }
 
 .color-3 {
-	background-color: var(--variant-color-3);
+	background-color: #d982f7;
 }
 
 .color-input:checked + .color-input-label::after {
@@ -351,7 +376,6 @@ body.settings-open .settings-container {
 
 .submit-button {
 	background-color: var(--variant-color-1);
-	color: var(--color-grey-2);
 	border: none;
 	padding: 1rem 2.5rem;
 	border-radius: 50px;

@@ -9,6 +9,8 @@ const pomodoroOptionsInputs = document.querySelectorAll(
 const pomodoroMinutes = document.getElementById("pomodoro-minutes");
 const shortBreak = document.getElementById("short-break");
 const longBreak = document.getElementById("long-break");
+const fontOptions = document.querySelectorAll('input[name="font"]');
+const colorOptions = document.querySelectorAll('input[name="color"]');
 
 // Close and Open settings icons
 const settingsIcon = document.getElementById("settings-icon");
@@ -24,6 +26,9 @@ const progressBar = document.querySelector(".progress-bar");
 // Time
 const minutesTime = document.querySelector(".time .minutes");
 const secondsTime = document.querySelector(".time .seconds");
+const pauseButton = document.getElementById("pause-button");
+const resumeButton = document.getElementById("resume-button");
+const restartButton = document.getElementById("restart-button");
 
 let totalTime;
 let timeLeft = totalTime;
@@ -53,7 +58,14 @@ function renderTime() {
 	secondsTime.innerText = seconds;
 }
 
-const interval = setInterval(() => {
+function resetTimer() {
+	pauseButton.hidden = false;
+	resumeButton.hidden = true;
+}
+
+let interval = setInterval(setTimer, 1000);
+
+function setTimer() {
 	let percentSeconds = 100 / totalTime;
 	percentValue = percentValue - percentSeconds;
 	setProgress(percentValue);
@@ -64,8 +76,9 @@ const interval = setInterval(() => {
 	if (timeLeft <= 0) {
 		setProgress(0);
 		clearInterval(interval);
+		resetTimer();
 	}
-}, 1000);
+}
 
 function setOptionMinutes(option) {
 	setProgress(100);
@@ -107,6 +120,20 @@ settingsOverlay.addEventListener("click", (event) => {
 settingsForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 	totalTime = Number(pomodoroMinutes.value) * 60;
+	pomodoroOptionsInputs[0].checked = true;
+
+	for (inputFont of fontOptions) {
+		if (inputFont.checked) {
+			document.body.setAttribute("data-font", `${inputFont.value}`);
+		}
+	}
+
+	for (inputColor of colorOptions) {
+		if (inputColor.checked) {
+			document.body.setAttribute("data-color", `${inputColor.value}`);
+		}
+	}
+
 	timeLeft = totalTime;
 	percentValue = 100;
 	renderTime();
@@ -115,6 +142,18 @@ settingsForm.addEventListener("submit", (event) => {
 
 pomodoroOptions.addEventListener("change", (event) => {
 	setOptionMinutes(event.target.value);
+});
+
+pauseButton.addEventListener("click", () => {
+	clearInterval(interval);
+	pauseButton.hidden = true;
+	resumeButton.hidden = false;
+});
+
+resumeButton.addEventListener("click", () => {
+	pauseButton.hidden = false;
+	resumeButton.hidden = true;
+	interval = setInterval(setTimer, 1000);
 });
 
 function getSettingsOptions() {

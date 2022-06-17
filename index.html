@@ -8,13 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins:wght@400;600&family=Roboto+Slab:wght@600&family=Space+Mono&display=swap"
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins:wght@400;600&family=Roboto+Slab:wght@600&family=Space+Grotesk&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Podomoro App</title>
 </head>
 
-<body>
+<body data-color="color-1" data-font="league-spartan">
   <section class="pomodoro">
     <h1 class="pomodoro-title">pomodoro</h1>
 
@@ -53,6 +53,7 @@
 
         <button class="timer-button" id="pause-button">pause</button>
         <button class="timer-button" id="resume-button" hidden>resume</button>
+        <button class="timer-button" id="restart-button" hidden>restart</button>
       </div>
     </div>
   </section>
@@ -90,18 +91,18 @@
 
           <div class="form-font-container">
             <div class="form-font-group">
-              <input type="radio" name="font" id="league-spartan" class="font-input" checked value="League Spartan">
+              <input type="radio" name="font" id="league-spartan" class="font-input" checked value="league-spartan">
               <label for="league-spartan" class="font-input-label font-spartan">Aa</label>
             </div>
 
             <div class="form-font-group">
-              <input type="radio" name="font" id="roboto-slab" class="font-input" value="Roboto Slab">
+              <input type="radio" name="font" id="roboto-slab" class="font-input" value="roboto-slab">
               <label for="roboto-slab" class="font-input-label font-roboto-slab">Aa</label>
             </div>
 
             <div class="form-font-group">
-              <input type="radio" name="font" id="space-mono" class="font-input" value="Space Mono">
-              <label for="space-mono" class="font-input-label font-space-mono">Aa</label>
+              <input type="radio" name="font" id="space-grotesk" class="font-input" value="space-grotesk">
+              <label for="space-grotesk" class="font-input-label font-space-grotesk">Aa</label>
             </div>
           </div>
         </div>
@@ -111,17 +112,17 @@
 
           <div class="form-color-container">
             <div class="form-color-group">
-              <input type="radio" name="color" id="color-1" class="color-input" value="Color 1" checked>
+              <input type="radio" name="color" id="color-1" class="color-input" value="color-1" checked>
               <label for="color-1" class="color-input-label color-1"></label>
             </div>
 
             <div class="form-color-group">
-              <input type="radio" name="color" id="color-2" class="color-input" value="Color 2">
+              <input type="radio" name="color" id="color-2" class="color-input" value="color-2">
               <label for="color-2" class="color-input-label color-2"></label>
             </div>
 
             <div class="form-color-group">
-              <input type="radio" name="color" id="color-3" class="color-input" value="Color 3">
+              <input type="radio" name="color" id="color-3" class="color-input" value="color-3">
               <label for="color-3" class="color-input-label color-3"></label>
             </div>
           </div>
