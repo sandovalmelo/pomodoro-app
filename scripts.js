@@ -30,10 +30,12 @@ const pauseButton = document.getElementById("pause-button");
 const resumeButton = document.getElementById("resume-button");
 const startButton = document.getElementById("start-button");
 
+// Time Config
 let totalTime;
 let timeLeft = totalTime;
 let percentValue = 100;
 
+// Progress Bar Config
 const radius = progressBar.r.baseVal.value;
 const circunference = radius * 2 * Math.PI;
 
@@ -47,6 +49,7 @@ function setProgress(percent) {
 
 setProgress(100);
 
+// Render Time on Screen
 function renderTime() {
 	const minutes = Math.floor(timeLeft / 60)
 		.toString()
@@ -64,6 +67,7 @@ function resetTimer() {
 	resumeButton.hidden = true;
 }
 
+// Interval Config
 let interval = setInterval(setTimer, 1000);
 
 function setTimer() {
@@ -80,22 +84,6 @@ function setTimer() {
 		clearInterval(interval);
 		resetTimer();
 	}
-}
-
-function setOptionMinutes(option) {
-	setProgress(100);
-
-	if (option === "option-pomodoro") {
-		totalTime = Number(pomodoroMinutes.value) * 60;
-	} else if (option === "option-short-break") {
-		totalTime = Number(shortBreak.value) * 60;
-	} else {
-		totalTime = Number(longBreak.value) * 60;
-	}
-
-	timeLeft = totalTime;
-	percentValue = 100;
-	renderTime();
 }
 
 // Toggle Settings
@@ -119,6 +107,7 @@ settingsOverlay.addEventListener("click", (event) => {
 	if (event.target === settingsOverlay) toggleSettings("remove");
 });
 
+// Settings Form
 settingsForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 	totalTime = Number(pomodoroMinutes.value) * 60;
@@ -142,10 +131,28 @@ settingsForm.addEventListener("submit", (event) => {
 	toggleSettings("remove");
 });
 
+// Set Options
+function setOptionMinutes(option) {
+	setProgress(100);
+
+	if (option === "option-pomodoro") {
+		totalTime = Number(pomodoroMinutes.value) * 60;
+	} else if (option === "option-short-break") {
+		totalTime = Number(shortBreak.value) * 60;
+	} else {
+		totalTime = Number(longBreak.value) * 60;
+	}
+
+	timeLeft = totalTime;
+	percentValue = 100;
+	renderTime();
+}
+
 pomodoroOptions.addEventListener("change", (event) => {
 	setOptionMinutes(event.target.value);
 });
 
+// Pause, Resume and Start
 pauseButton.addEventListener("click", () => {
 	clearInterval(interval);
 	pauseButton.hidden = true;
@@ -166,6 +173,7 @@ startButton.addEventListener("click", () => {
 	setInterval(setTimer, 1000);
 });
 
+// Get Settings
 function getSettingsOptions() {
 	totalTime = Number(pomodoroMinutes.value) * 60;
 	timeLeft = totalTime;
