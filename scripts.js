@@ -62,9 +62,12 @@ function renderTime() {
 }
 
 function resetTimer() {
-	startButton.hidden = false;
 	pauseButton.hidden = true;
 	resumeButton.hidden = true;
+
+	setTimeout(() => {
+		startButton.hidden = false;
+	}, 1000);
 }
 
 // Interval Config
@@ -76,10 +79,10 @@ function setTimer() {
 	percentValue = percentValue - percentSeconds;
 	setProgress(percentValue);
 	timeLeft--;
-
 	renderTime();
 
 	if (timeLeft <= 0) {
+		timeLeft = 0;
 		setProgress(0);
 		clearInterval(interval);
 		resetTimer();
@@ -150,6 +153,10 @@ function setOptionMinutes(option) {
 
 pomodoroOptions.addEventListener("change", (event) => {
 	setOptionMinutes(event.target.value);
+	startButton.hidden = true;
+	pauseButton.hidden = false;
+	clearInterval(interval);
+	interval = setInterval(setTimer, 1000);
 });
 
 // Pause, Resume and Start
@@ -166,11 +173,14 @@ resumeButton.addEventListener("click", () => {
 });
 
 startButton.addEventListener("click", () => {
-	console.log(totalTime);
-	console.log(timeLeft);
 	percentValue = 100;
+	startButton.hidden = true;
+	setTimeout(() => {
+		pauseButton.hidden = false;
+	}, 400);
 	timeLeft = totalTime;
-	setInterval(setTimer, 1000);
+	clearInterval(interval);
+	interval = setInterval(setTimer, 1000);
 });
 
 // Get Settings
