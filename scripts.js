@@ -28,7 +28,7 @@ const minutesTime = document.querySelector(".time .minutes");
 const secondsTime = document.querySelector(".time .seconds");
 const pauseButton = document.getElementById("pause-button");
 const resumeButton = document.getElementById("resume-button");
-const restartButton = document.getElementById("restart-button");
+const startButton = document.getElementById("start-button");
 
 let totalTime;
 let timeLeft = totalTime;
@@ -59,13 +59,15 @@ function renderTime() {
 }
 
 function resetTimer() {
-	pauseButton.hidden = false;
+	startButton.hidden = false;
+	pauseButton.hidden = true;
 	resumeButton.hidden = true;
 }
 
 let interval = setInterval(setTimer, 1000);
 
 function setTimer() {
+	startButton.hidden = true;
 	let percentSeconds = 100 / totalTime;
 	percentValue = percentValue - percentSeconds;
 	setProgress(percentValue);
@@ -154,6 +156,14 @@ resumeButton.addEventListener("click", () => {
 	pauseButton.hidden = false;
 	resumeButton.hidden = true;
 	interval = setInterval(setTimer, 1000);
+});
+
+startButton.addEventListener("click", () => {
+	console.log(totalTime);
+	console.log(timeLeft);
+	percentValue = 100;
+	timeLeft = totalTime;
+	setInterval(setTimer, 1000);
 });
 
 function getSettingsOptions() {
