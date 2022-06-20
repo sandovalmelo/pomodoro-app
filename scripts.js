@@ -62,20 +62,20 @@ function renderTime() {
 }
 
 function resetTimer() {
-	pauseButton.hidden = true;
-	resumeButton.hidden = true;
-
+	percentValue = 100;
 	setTimeout(() => {
 		startButton.hidden = false;
 	}, 1000);
+	pauseButton.hidden = true;
+	resumeButton.hidden = true;
+	timeLeft = totalTime;
+	clearInterval(interval);
 }
 
 // Interval Config
 let interval;
 
 function setTimer() {
-	console.log("Start");
-	startButton.hidden = true;
 	let percentSeconds = 100 / totalTime;
 	percentValue = percentValue - percentSeconds;
 	setProgress(percentValue);
@@ -129,8 +129,13 @@ settingsForm.addEventListener("submit", (event) => {
 		}
 	}
 
+	startButton.hidden = false;
+	pauseButton.hidden = true;
+	resumeButton.hidden = true;
 	timeLeft = totalTime;
 	percentValue = 100;
+	setProgress(100);
+	clearInterval(interval);
 	renderTime();
 	toggleSettings("remove");
 });

@@ -151,7 +151,7 @@ input {
 	transform: rotate(-90deg);
 	transform-origin: 50% 50%;
 	stroke: var(--variant-color-1);
-	transition: 1s stroke-dashoffset;
+	transition: stroke-dashoffset 1s;
 }
 
 .time {
@@ -191,6 +191,7 @@ input {
 .settings-icon {
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 2rem;
 	display: block;
 }
 
