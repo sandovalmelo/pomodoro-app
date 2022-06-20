@@ -58,7 +58,7 @@ body {
 	padding: 1rem;
 }
 
-body.settings-open {
+body[data-settings="open"] {
 	position: relative;
 	width: 100%;
 	height: 10%;
@@ -199,7 +199,7 @@ input {
 	display: block;
 }
 
-body.settings-open .settings {
+body[data-settings="open"] .settings {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -214,7 +214,7 @@ body.settings-open .settings {
 	background-color: #0000007e;
 }
 
-body.settings-open .settings-container {
+body[data-settings="open"] .settings-container {
 	display: block;
 	visibility: visible;
 }

@@ -93,9 +93,9 @@ function setTimer() {
 // Toggle Settings
 function toggleSettings(method) {
 	if (method === "add") {
-		document.body.classList.add("settings-open");
+		document.body.setAttribute("data-settings", "open");
 	} else if (method === "remove") {
-		document.body.classList.remove("settings-open");
+		document.body.setAttribute("data-settings", "close");
 	}
 }
 
