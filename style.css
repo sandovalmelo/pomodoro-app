@@ -8,9 +8,11 @@
 
 :root {
 	--main-font: "Poppins", sans-serif;
+
 	--variant-font-1: "League Spartan", sans-serif;
 	--variant-font-2: "Roboto Slab", serif;
 	--variant-font-3: "Space Grotesk", sans-serif;
+	--timer-font: "League Spartan", sans-serif;
 
 	--main-color-1: #1e2140;
 	--main-color-2: #151932;
@@ -18,33 +20,35 @@
 	--light-color: #d8dffb;
 	--color-grey-1: #828282;
 	--color-grey-2: #e0e0e0;
+
 	--variant-color-1: #fd6d72;
 	--variant-color-2: #6ff4fb;
 	--variant-color-3: #d982f7;
+	--color-theme: #fd6d72;
 }
 
 body[data-color="color-1"] {
-	--variant-color-1: #fd6d72;
+	--color-theme: #fd6d72;
 }
 
 body[data-color="color-2"] {
-	--variant-color-1: #6ff4fb;
+	--color-theme: #6ff4fb;
 }
 
 body[data-color="color-3"] {
-	--variant-color-1: #d982f7;
+	--color-theme: #d982f7;
 }
 
 body[data-font="league-spartan"] {
-	--variant-font-1: "League Spartan", sans-serif;
+	--timer-font: "League Spartan", sans-serif;
 }
 
 body[data-font="roboto-slab"] {
-	--variant-font-1: "Roboto Slab", serif;
+	--timer-font: "Roboto Slab", serif;
 }
 
 body[data-font="space-grotesk"] {
-	--variant-font-1: "Space Grotesk", sans-serif;
+	--timer-font: "Space Grotesk", sans-serif;
 }
 
 body {
@@ -105,7 +109,7 @@ input {
 }
 
 .pomodoro-option-input:checked + .pomodoro-option-label {
-	background-color: var(--variant-color-1);
+	background-color: var(--color-theme);
 	color: var(--main-color-2);
 }
 
@@ -150,7 +154,7 @@ input {
 .progress-bar {
 	transform: rotate(-90deg);
 	transform-origin: 50% 50%;
-	stroke: var(--variant-color-1);
+	stroke: var(--color-theme);
 	transition: stroke-dashoffset 1s;
 }
 
@@ -167,7 +171,7 @@ input {
 
 .time span {
 	font-size: 4.5rem;
-	font-family: var(--variant-font-1);
+	font-family: var(--timer-font);
 }
 
 .timer-button {
@@ -353,15 +357,15 @@ body.settings-open .settings-container {
 }
 
 .color-1 {
-	background-color: #fd6d72;
+	background-color: var(--variant-color-1);
 }
 
 .color-2 {
-	background-color: #6ff4fb;
+	background-color: var(--variant-color-2);
 }
 
 .color-3 {
-	background-color: #d982f7;
+	background-color: var(--variant-color-3);
 }
 
 .color-input:checked + .color-input-label::after {
@@ -380,7 +384,7 @@ body.settings-open .settings-container {
 }
 
 .submit-button {
-	background-color: var(--variant-color-1);
+	background-color: var(--color-theme);
 	border: none;
 	padding: 1rem 2.5rem;
 	border-radius: 50px;
