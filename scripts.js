@@ -71,9 +71,10 @@ function resetTimer() {
 }
 
 // Interval Config
-let interval = setInterval(setTimer, 1000);
+let interval;
 
 function setTimer() {
+	console.log("Start");
 	startButton.hidden = true;
 	let percentSeconds = 100 / totalTime;
 	percentValue = percentValue - percentSeconds;
@@ -153,10 +154,10 @@ function setOptionMinutes(option) {
 
 pomodoroOptions.addEventListener("change", (event) => {
 	setOptionMinutes(event.target.value);
-	startButton.hidden = true;
-	pauseButton.hidden = false;
+	startButton.hidden = false;
+	pauseButton.hidden = true;
+	resumeButton.hidden = true;
 	clearInterval(interval);
-	interval = setInterval(setTimer, 1000);
 });
 
 // Pause, Resume and Start
@@ -175,9 +176,7 @@ resumeButton.addEventListener("click", () => {
 startButton.addEventListener("click", () => {
 	percentValue = 100;
 	startButton.hidden = true;
-	setTimeout(() => {
-		pauseButton.hidden = false;
-	}, 400);
+	pauseButton.hidden = false;
 	timeLeft = totalTime;
 	clearInterval(interval);
 	interval = setInterval(setTimer, 1000);
